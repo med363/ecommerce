@@ -1,42 +1,43 @@
 <div class="box mt-5">
 
     <!-- box of filter -->
-    <div class="my-2 mt-5">
+    <div class="my-2 w-25">
         <label for="" class="my-1">Categories :</label>
-        <select class="form-control">
-            <option value="1">option 1</option>
-            <option value="2">option 2</option>
-            <option value="3">option 3</option>
-            <option value="4">option 4</option>
+        <!-- detect change on filter donc i create fct and make it in ts-->
+        <select class="form-control" (change)="filterCategory($event)">
+            <option value="all">All</option>
+                    <!-- loop in array categories avec ngFor -->
+
+            <option value="{{option}}" *ngFor="let option of categories">{{option}}</option>
+
 
         </select>
     </div>
-<!-- card of product -->
+    <!-- card of product -->
     <div class="row">
-
-        <div class="col-md-3 col-sm-12">
+        <!-- loop in array product avec ngFor -->
+        <div class="col-md-3 col-sm-12"  *ngFor="let item of products">
             <div class=" item">
-    
-                <img sre="test" alt="">
-                 <div class="body">
-                    <h4>some Title </h4> 
-                     <p>Test Add Description</p>
-           
-                  </div>
-        
-            <div class="px-3 wb-2 4-flew justify-content-between allgn-items-center">
-                <button class="btn btn-success">Add To
-                    Cart</button>
-                    <span>50 L.E</span>
-        
-            </div>  
-        
+
+                <img src="{{item.image}}" alt="">
+                <div class="body">
+                    <h4> {{item.title}}</h4>
+                    <p>{{item.description}}</p>
+
+                </div>
+
+                <div class="px-3 wb-2 4-flew justify-content-between allgn-items-center">
+                    <!-- fct to add to cart -->
+                    <button class="btn btn-success" (click)="add(item)">Add To Cart</button>
+                    <span> {{item.price}} DT</span>
+
+                </div>
+
             </div>
-        
-    
+
+
         </div>
-        
-    
+
+
     </div>
 </div>
-
