@@ -46,6 +46,10 @@ ng g s carts/services/carts
 ## we use api on site 
 https://fakestoreapi.com/
 
+
+## font awesome icon 
+ng add @fortawesome/angular-fontawesome
+
 # Ecommerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
