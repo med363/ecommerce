@@ -6,7 +6,17 @@ import {HttpClient} from '@angular/common/http'
 export class ProductsService {
 
   constructor(private http:HttpClient) { }
+  /*get all*/
   getAllProducts(){
     return this.http.get('https://fakestoreapi.com/products')
   }
+  /*get cat*/
+  getAllCategories(){
+    return this.http.get('https://fakestoreapi.com/products/categories')
+  }
+
+    /*get product by categories keyword is the value of target value*/
+    getProductByCategories(keyword:string){
+      return this.http.get('https://fakestoreapi.com/products/category/'+keyword)
+    }
 }
