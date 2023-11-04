@@ -17,8 +17,9 @@ ngOnInit():void{
 // create of services get all 
 getProducts(){
   this.service.getAllProducts().subscribe((res:any)=>{
-    console.log(res);
-  })
+// stock all product in array  products
+this.products = res
+})
 }
 
 }
