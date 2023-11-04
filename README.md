@@ -29,7 +29,7 @@
 	services   :
 		- cart.service
 ## cli
-ng g m shared
+ng g m shared \n
 ng g c shared/header
 ng g s shared/shared
 
