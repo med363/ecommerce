@@ -50,6 +50,8 @@ https://fakestoreapi.com/
 ## font awesome icon 
 ng add @fortawesome/angular-fontawesome
 
+### bootstrape
+npm i --save bootstrap@latest
 # Ecommerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
