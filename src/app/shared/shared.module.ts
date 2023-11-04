@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent
   ],
   imports: [
-    CommonModule,FontAwesomeModule
+    CommonModule,FontAwesomeModule,
+    RouterModule
   ],
   // module be global in all project export
   exports: [
