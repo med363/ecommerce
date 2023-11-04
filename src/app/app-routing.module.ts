@@ -5,10 +5,10 @@ import { ProductsDetailsComponent } from './products/components/products-details
 import { CartsComponent } from './carts/components/carts/carts.component';
 
 const routes: Routes = [
-  {path:"product", component:AllProductsComponent},
+  {path:"products", component:AllProductsComponent},
   {path:"details" , component:ProductsDetailsComponent},
   {path:'cart', component:CartsComponent},
-  {path:"**",redirectTo:"product",pathMatch:"full"}
+  {path:"**",redirectTo:"products",pathMatch:"full"}
 ];
 
 @NgModule({
