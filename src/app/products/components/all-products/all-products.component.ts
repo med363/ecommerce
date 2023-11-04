@@ -7,6 +7,11 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./all-products.component.scss']
 })
 export class AllProductsComponent {
+  cartCount: number = 0; // Initialize cart count to 0
+
+  // Initialize the cart as an empty array
+  cart: any[] = [];
+
 // array for recieve data from api
 products:any[]=[]
 categories:any[]=[]
@@ -57,5 +62,14 @@ getProductsCategory(keyword:string){
 //mettre a jour arra of product
 this.products = res
   })
+}
+
+ // Function to add an item to the cart and store it in local storage
+ add(item: any) {
+  this.cart.push(item); // Add the item to the cart array
+  console.log(item);
+  localStorage.setItem('cart', JSON.stringify(this.cart)); // Store the cart in local storage
+  this.cartCount = this.cart.length; // Update the cart count
+
 }
 }
