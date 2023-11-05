@@ -25,7 +25,8 @@ import { SelectComponent } from './components/select/select.component';
   exports: [
     HeaderComponent,
     SpinnerComponent,
-    SelectComponent
+    SelectComponent,
+    
   ]
 })
 export class SharedModule { }

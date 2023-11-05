@@ -1,36 +1,17 @@
 <div class="box mt-5">
-
     <!-- box of filter -->
     <div class="my-2 w-25">
         <!-- child of select component -->
-       <app-select [data]="categories" [title]="'categories:'" (selectedValue)="filterCategory($event)"></app-select>
+        <app-select [data]="categories" [title]="'categories:'" (selectedValue)="filterCategory($event)"></app-select>
     </div>
-    <!-- card of product -->  
+    <!-- card of product -->
     <!-- condition when req attend show spinner => loading =false -->
     <div class="row" *ngIf="!loading">
         <!-- loop in array product avec ngFor -->
-        <div class="col-md-3 col-sm-12"  *ngFor="let item of products">
-            <div class=" item">
-
-                <img src="{{item.image}}" alt="">
-                <div class="body">
-                    <h4> {{item.title}}</h4>
-                    <p>{{item.description}}</p>
-
-                </div>
-
-                <div class="px-3 wb-2 4-flew justify-content-between allgn-items-center">
-                    <button class="btn btn-success">Add To Cart</button>
-                    <span> {{item.price}} DT</span>
-
-                </div>
-
-            </div>
-
-
+        <div class="col-md-3 col-sm-12" *ngFor="let item of products">
+            <!-- child of product component -->
+            <app-product [data]="item"></app-product>
         </div>
-
-
     </div>
     <!-- loading true -->
     <div class="text-center w-100" *ngIf="loading">
