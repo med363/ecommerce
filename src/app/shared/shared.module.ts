@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SelectComponent } from './components/select/select.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,13 +20,16 @@ import { SelectComponent } from './components/select/select.component';
     // route fct
     RouterModule,
     // http client fct
-    HttpClientModule
+    HttpClientModule,
+    // toway binding fct
+    FormsModule
   ],
   // module be global in all project export
   exports: [
     HeaderComponent,
     SpinnerComponent,
     SelectComponent,
+    FormsModule
     
   ]
 })

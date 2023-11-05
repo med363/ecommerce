@@ -85,7 +85,7 @@ addToCart(event:any){
 if("cart" in localStorage) {
   this.cartProduct= JSON.parse(localStorage.getItem("cart")!)
   // var to check if item id exit in array paroduct cart
-  let exist = this.cartProduct.find(item => item.id == event.id)
+  let exist = this.cartProduct.find(item => item.item.id == event.item.id)
   if(exist){
     alert("product aleready exist in cart")
   }else{
@@ -93,6 +93,7 @@ if("cart" in localStorage) {
   // push in array cart product to localstorage
   localStorage.setItem("cart", JSON.stringify(this.cartProduct))
   }
+  //send data w number
 this.cartProduct.push(event)
   // push in array cart product to localstorage
   localStorage.setItem("cart", JSON.stringify(this.cartProduct))
