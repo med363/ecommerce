@@ -7,6 +7,11 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./all-products.component.scss']
 })
 export class AllProductsComponent {
+  cartCount: number = 0; // Initialize cart count to 0
+
+  // Initialize the cart as an empty array
+  cart: any[] = [];
+
 // array for recieve data from api
 products:any[]=[]
 categories:any[]=[]
@@ -77,6 +82,7 @@ this.products = res
   })
 }
 
+
 //data from child product
 addToCart(event:any){
   // pull data from localstorage
@@ -108,4 +114,5 @@ else{
  console.log(event);
   
 }
+
 }
