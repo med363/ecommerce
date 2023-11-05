@@ -2,16 +2,8 @@
 
     <!-- box of filter -->
     <div class="my-2 w-25">
-        <label for="" class="my-1">Categories :</label>
-        <!-- detect change on filter donc i create fct and make it in ts-->
-        <select class="form-control" (change)="filterCategory($event)">
-            <option value="all">All</option>
-                    <!-- loop in array categories avec ngFor -->
-
-            <option value="{{option}}" *ngFor="let option of categories">{{option}}</option>
-
-
-        </select>
+        <!-- child of select component -->
+       <app-select [data]="categories" [title]="'categories:'" (selectedValue)="filterCategory($event)"></app-select>
     </div>
     <!-- card of product -->  
     <!-- condition when req attend show spinner => loading =false -->
