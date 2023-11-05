@@ -12,6 +12,8 @@ products:any[]=[]
 categories:any[]=[]
 // var for show spinner
 loading:boolean= false
+//cart array
+cartProduct:any[]=[]
 constructor(private service:ProductsService){}
 // appel of service
 ngOnInit():void{
@@ -73,5 +75,36 @@ this.products = res
     // after req => do not show spinner
     this.loading=false
   })
+}
+
+//data from child product
+addToCart(event:any){
+  // pull data from localstorage
+  // JSON.stringify //send data
+  // JSON.parse() //receive data 
+if("cart" in localStorage) {
+  this.cartProduct= JSON.parse(localStorage.getItem("cart")!)
+  // var to check if item id exit in array paroduct cart
+  let exist = this.cartProduct.find(item => item.id == event.id)
+  if(exist){
+    alert("product aleready exist in cart")
+  }else{
+    this.cartProduct.push(event)
+  // push in array cart product to localstorage
+  localStorage.setItem("cart", JSON.stringify(this.cartProduct))
+  }
+this.cartProduct.push(event)
+  // push in array cart product to localstorage
+  localStorage.setItem("cart", JSON.stringify(this.cartProduct))
+}
+// cart not exist in localStorage
+else{
+  this.cartProduct.push(event)
+  // push in array cart product to localstorage
+  localStorage.setItem("cart", JSON.stringify(this.cartProduct))
+
+}
+ console.log(event);
+  
 }
 }
