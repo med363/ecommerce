@@ -4,11 +4,13 @@ import { HeaderComponent } from './components/header/header.component';
 import {HttpClientModule} from '@angular/common/http'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,FontAwesomeModule,
@@ -19,7 +21,8 @@ import { RouterModule } from '@angular/router';
   ],
   // module be global in all project export
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }
