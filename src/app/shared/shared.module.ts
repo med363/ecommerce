@@ -5,12 +5,14 @@ import {HttpClientModule} from '@angular/common/http'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SelectComponent } from './components/select/select.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SelectComponent
   ],
   imports: [
     CommonModule,FontAwesomeModule,
@@ -22,7 +24,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   // module be global in all project export
   exports: [
     HeaderComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SelectComponent,
+    
   ]
 })
 export class SharedModule { }

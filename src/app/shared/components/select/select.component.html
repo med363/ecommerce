@@ -1,0 +1,10 @@
+<label for="" class="my-1">{{title}}</label>
+<!-- detect change on filter donc i create fct and make it in ts-->
+<select class="form-control" (change)="detectChange($event)">
+    <option value="all">All</option>
+            <!-- loop in array categories avec ngFor -->
+
+    <option value="{{option}}" *ngFor="let option of data">{{option}}</option>
+
+
+</select>
