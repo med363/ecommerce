@@ -47,4 +47,35 @@
     </table>
     
 </div>
+<!-- Hidden div to hold the cart details for PDF generation -->
+<div id="order-details" style="display: none;">
+    <h1>Shopping Cart</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartProduct">
+          <td><img src="{{item.item.image}}" alt=""></td>
+          <td>{{item.item.title}}</td>
+          <td>{{item.item.price}} DT</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.item.price * item.quantity}} DT</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"></td>
+          <td>Total:</td>
+          <td>{{total}} DT</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
 <div class="alert alert-success" role="alert" *ngIf="success"><strong>Well done!</strong> Your Order is Successfully Send</div>
