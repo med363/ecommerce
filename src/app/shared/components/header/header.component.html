@@ -6,6 +6,9 @@
                     <li routerLink="/">Products</li>
                     <li routerLink="/cart">
                         <fa-icon [icon]="cofe"></fa-icon>
+                        <div *ngIf="cartProduct && cartProduct.length > 0">
+                            <span>{{cartProduct.length}}</span>
+                        </div>
                     </li>
                 </ul>
             </div>
