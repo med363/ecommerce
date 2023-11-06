@@ -8,6 +8,8 @@ import { Component ,OnInit} from '@angular/core';
 export class CartsComponent implements OnInit{
   constructor(){}
   cartProduct:any[] = []
+  //var of ttal price product
+  total:any=0
   ngOnInit(): void {
     this.getCartProduct()
   }
@@ -21,6 +23,16 @@ if("cart" in localStorage) {
   this.cartProduct= JSON.parse(localStorage.getItem("cart")!)
 }
 console.log(this.cartProduct);
+//appel methode total
+this.getCartProduct()
+}
+
+//totat prize
+getCartTotal(){
+  this.total=0
+  for (let x in this.cartProduct){
+    this.total+=this.cartProduct[x].item.price * this.cartProduct[x].quantity;
+  }
 
 }
 }
