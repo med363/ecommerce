@@ -10,10 +10,11 @@ import { ProductComponent } from './components/product/product.component';
   declarations: [
     AllProductsComponent,
     ProductsDetailsComponent,
-    ProductComponent
+    ProductComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ]
 })
 export class ProductsModule { }

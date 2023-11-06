@@ -10,7 +10,7 @@ import { ProductComponent } from './products/components/product/product.componen
   declarations: [
     AppComponent,
     AllProductsComponent,
-    ProductComponent
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
